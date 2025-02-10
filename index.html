@@ -1,0 +1,102 @@
+<!DOCTYPE hmtl>
+<html lang ="en">
+  <head>
+    <meta charset = "UTF-8">
+    <meta name = "viewpoint" content = "width=device-width", initial-scale=1.0">
+    <title>Greetingsss</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        background-color: #ffe6e6;
+        text-align: center;
+        padding: 20px;
+      }
+      .container {
+        max-width: 60px;
+        margin: auto;
+        background: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #ff4d4d;
+      }
+      .input-section {
+        margin: 20px 0;
+      }
+      input {
+        padding: 10px;
+        width: 80%;
+        border: 1px solid #d63384;
+        text-align: center;
+      }
+      button {
+        background; #ff4d4d;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      button:hover {
+        background: #e60073;
+      }
+      .message {
+        display: none;
+        margin-top: 20px;
+        font-size: 20px;
+        color: #d63384;
+        font-weight: bold;
+      }
+      .hidden-message {
+        background: #ff4d94;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        display: inline-block;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      .hidden-message:hover {
+        background: #e60073;
+      }
+    </style>
+  </head>
+  <body>
+    <div class = "container">
+      <h1>Happy Hearts Day! 💖</h1>
+      <div class = "input-section">
+        <p>Please Enter your name:</p>
+        <input type = "text" id = "nameInput" placeholder = "Type name here...">
+        <button onclick = "setName()">Set Name</button>
+      </div>
+
+      <h2 id = "recipientName"></h2>
+
+      <div id = "clickToReveal" class = "hidden-message" onclick = "showMessage()">💌 Click to reveal your message! 💌</div>
+
+      <p id = "message" class = "message">can we fuck? >.< </p>
+    </div>
+
+    <script>
+      function setName() {
+        let name = document.getElementById("nameInput").value;
+        if (name.trim() != "") {
+          document.getElementById("recipientName").innerText = "Dear" + name + ",";
+        }
+      }
+      function showMessage() {
+        document.getElementById("message").style.display = "block";
+        document.getElementById("clickToReveal").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
